@@ -1,8 +1,7 @@
 import React from 'react';
-import MenuCard from './MenuCard';
-// import MenuHeader from './MenuHeader';
-import styles from './main.css';
 import combineClasses from 'classnames';
+import MenuCard from './MenuCard';
+import styles from './main.css';
 
 const PAGE_SIZE = 6;
 
@@ -14,7 +13,6 @@ class Main extends React.Component {
 
   renderMenuPage(apps) {
     const route = (app) => {
-      console.log(app);
       window.history.pushState({}, '', app.routes);
     };
     const cards = apps.map((app) => (
