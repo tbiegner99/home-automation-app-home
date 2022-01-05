@@ -6,7 +6,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].[contenthash].bundle.js',
     libraryTarget: 'system',
     path: path.resolve(__dirname, 'build'),
     publicPath: '/'
