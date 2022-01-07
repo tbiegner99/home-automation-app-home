@@ -8,7 +8,7 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].bundle.js',
     libraryTarget: 'system',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'build', process.env.OUTDIR || ''),
     publicPath: '/'
   },
 
