@@ -2,6 +2,7 @@ import React from 'react';
 import combineClasses from 'classnames';
 import MenuCard from './MenuCard';
 import styles from './main.css';
+import MenuHeader from './MenuHeader';
 
 const PAGE_SIZE = 6;
 
@@ -13,11 +14,13 @@ class Main extends React.Component {
 
   renderMenuPage(apps) {
     const route = (app) => {
-      window.history.pushState({}, '', app.routes);
+      window.history.pushState({}, '', app.routes.routes);
     };
     const cards = apps.map((app) => (
       <div className={styles.appCard}>
-        <MenuCard onClick={() => route(app)} className={styles.card} title={<b>{app.title}</b>} />
+        <MenuCard onClick={() => route(app)} className={styles.card} title={<b>{app.title}</b>} >
+          {app.icon && <img alt="" className={styles.icon} src={`/icons/${app.name}/${app.icon}`} />}
+        </MenuCard>
       </div>
     ));
     return <div className={styles.appsPage}>{cards}</div>;
@@ -60,8 +63,9 @@ class Main extends React.Component {
     const pages = this.renderMenuItems(menuPage);
     return (
       <main className={styles.mainMenu}>
-        {/* <MenuHeader /> */}
-        <section className={styles.headerSection}>Main Menu</section>
+        <section className={styles.headerSection}>
+          <MenuHeader />
+        </section>
         <section className={styles.appsMenu}>
           {this.renderLastArrow(menuPage)}
           <section className={styles.menuContent}>

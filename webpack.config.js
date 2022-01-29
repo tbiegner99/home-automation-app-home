@@ -6,12 +6,12 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: '[name].[contenthash].bundle.js',
+    filename: 'home-app.js', // '[name].[contenthash].bundle.js',
     libraryTarget: 'system',
     path: path.resolve(__dirname, 'build', process.env.OUTDIR || ''),
     publicPath: '/'
   },
-
+  externals: ['react', 'react-dom'], // , '@tbiegner99/home-automation-components'],
   devServer: {
     hot: true,
     host: '0.0.0.0',
@@ -21,9 +21,7 @@ module.exports = {
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
       'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization'
     },
-    proxy: {
-      '/api/kareoke': 'http://localhost:8080'
-    },
+
     historyApiFallback: true
   },
 
