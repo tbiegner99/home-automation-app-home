@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { Units, ConvertableValue } from '@tbiegner99/home-automation-components';
 
 const WeatherUnits = {
@@ -47,7 +46,7 @@ class WeatherSerializer {
     const { properties } = observation;
     return {
       precipitationLastHour: createDistance(properties.precipitationLastHour, 0),
-      timestamp: moment(properties.timestamp),
+      timestamp: properties.timestamp,
       temperature: createTemperature(properties.temperature),
       dewpoint: createTemperature(properties.dewpoint),
       windChill: createTemperature(properties.windChill),
