@@ -3,6 +3,7 @@ import combineClasses from 'classnames';
 import MenuCard from './MenuCard';
 import styles from './main.css';
 import MenuHeader from './MenuHeader';
+import { Arrow } from './Arrow';
 
 const PAGE_SIZE = 6;
 
@@ -43,7 +44,7 @@ class Main extends React.Component {
 
     return (
       <div className={styles.arrow} onClick={!hide ? onClick : null}>
-        <div className={combineClasses({ [styles.hide]: hide })}>L</div>
+        <Arrow className={combineClasses(styles.arrowIcon,styles.left,{ [styles.hide]: hide })} />
       </div>
     );
   }
@@ -53,7 +54,7 @@ class Main extends React.Component {
     const onClick = () => this.setState({ menuPage: page + 1 });
     return (
       <div className={styles.arrow} onClick={!hide ? onClick : null}>
-        <div className={combineClasses({ [styles.hide]: hide })}>N</div>
+        <Arrow className={combineClasses(styles.arrowIcon,{ [styles.hide]: hide })} />
       </div>
     );
   }

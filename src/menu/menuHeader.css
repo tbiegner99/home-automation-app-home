@@ -2,39 +2,35 @@
 .menuHeader {
     width:100%;
     display:flex;
-    flex-direction: column;
+    justify-content: space-between;
     font-size: 35px;
-    padding-bottom:10px;
+    padding: 10px 5vw ;
 }
-.menuHeader > * {
-    width: 100%;
+ 
+.refreshButton {
+    align-self: start;
+}
+
+.headerRow {
     display:flex;
     align-items: center;
     justify-content: center;
-    padding:10px 0px;
-
-}
-.refreshButton {
-    position: absolute;
-    top:25;
-    left:10;
-    width:50px;
-    font-size:30px;
-}
-
-.status {
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     padding:10px 0px;
 }
 
-.status > * {
-    width: 200px;
+.headerRow > * {
+    height: 50px;
     text-align: center;
 }
+.headerRow:nth-of-type(2) {
+    width:80%;
+}
 
-
+.sunrise {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
 
 .timeDisplay > * {
     width:100%;

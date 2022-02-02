@@ -10,12 +10,16 @@ import WeatherDisplay from '../components/WeatherStatus';
 
 const MenuHeader = (props) => (
   <div className={styles.menuHeader} onClick={props.onClick}>
-    <RefreshIcon onClick={() => window.location.reload()} className={styles.refreshButton} />
-    <CurrentTime format="dddd MMMM D YYYY" />
-    <div className={styles.status}>
+    <div className={styles.headerRow}>
+      <RefreshIcon onClick={() => window.location.reload()} className={styles.refreshButton} />
       <WeatherDisplay />
+    </div>
+    <div className={styles.headerRow}>
+      <CurrentTime format="dddd MMMM D YYYY" />
       <CurrentTime format="hh:mma" />
-      <SunriseDisplay units={AmericanUnits} />
+    </div>
+    <div className={styles.headerRow}>
+      <SunriseDisplay className={styles.sunrise} units={AmericanUnits} />
     </div>
   </div>
 );

@@ -3,26 +3,36 @@
     height: 100%;
     width:5vw;
     z-index: 1;
-background: white;
-}
-.arrow > div {
-    height:100%;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 10px;
 }
+.arrowIcon {
+    height:60%;
+}
+
+.arrowIcon.left {
+    transform: scaleX(-1);
+}
+
 .hide {
     display:none !important;
 }
+.mainMenu {
+    display: flex;
+    flex-direction: column;
+    height:100%;
+}
+
 
 .menuContent {
-    width:90vw;
     overflow: hidden;
+    height:100%;
+    width:95vw;
 }
 
-.headerSection {
-    height:40vh;
-}
 .card {
     height:100%
 }
@@ -34,35 +44,36 @@ background: white;
 .appsMenu{
     overflow: hidden;
     width:100vw;
-    height:60vh;
-    position:relative;
+    flex-grow: 1;
     display: flex;
     flex-direction: row;
 }
 .appCard {
     width:30vw;
-    height:26vh;
+    padding:10px 0;
+    height: 50%;
     
 }
 .appCard:nth-of-type(2), .appCard:nth-of-type(5) {
-    padding:0 2vw
+    padding:10px 2vw
 }
 .appsPage {
    width:100vw;
-    padding:2vh 5vw;
+    padding:2vh 0;
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
-    height:60vh;
+    flex-grow: 0;
     overflow: hidden;
  
 }
 .appsPagesContainer {
     display: flex;
     flex-direction: row;
-    position: absolute;
+    position: relative;
     left:0;
     transition: all .7s ease-in-out;
+    height:100%;
 }
 .icon {
     height:18px;
